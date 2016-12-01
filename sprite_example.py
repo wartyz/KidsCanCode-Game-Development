@@ -36,6 +36,11 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()  # Obtenemos el rect del sprite
         self.rect.center = (WIDTH / 2, HEIGHT / 2)  # Ponemos el player en el centro de la pantalla
 
+    def update(self):
+        self.rect.x += 5
+        if self.rect.left > WIDTH:  # Si supera el lado derecho de la ventana
+            self.rect.right = 0  # Moverlo a la izquierda
+
 # inicializa pygame y crea ventana
 pygame.init()
 pygame.mixer.init()
