@@ -1,7 +1,5 @@
 # Pygame template - esqueleto para un nuevo proyecto de pygame
-# Primera prueba
-# Segunda prueba
-# Tercera prueba
+
 import pygame
 import random
 
@@ -23,6 +21,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 
+all_sprites = pygame.sprite.Group()  # Creamos un grupo de sprites
+
 # Game Loop
 running = True
 while running:
@@ -34,9 +34,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     # Update
+    all_sprites.update()
 
     # Draw / render
     screen.fill(BLACK)
+    all_sprites.draw(screen)  # Dibujamos todos los sprites
     # *despues* de dibujar, intercambiar la pantalla
     pygame.display.flip()
 
