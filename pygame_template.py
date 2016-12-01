@@ -1,5 +1,6 @@
 # Pygame template - esqueleto para un nuevo proyecto de pygame
 # Primera prueba
+# Segunda prueba
 import pygame
 import random
 
