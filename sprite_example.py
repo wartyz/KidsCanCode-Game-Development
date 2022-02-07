@@ -38,7 +38,7 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         # Cargamos la imagen (obtenemos una surface) y la convertimos a un nuevo formato de píxeles
         self.image = pygame.image.load(os.path.join(img_folder, "p1_jump.png")).convert()
-        self.image.set_colorkey(BLACK)
+        self.image.set_colorkey(BLACK) # Color transparente para sprite
         self.rect = self.image.get_rect()  # Obtenemos el rect del sprite
         self.rect.center = (WIDTH / 2, HEIGHT / 2)  # Ponemos el player en el centro de la pantalla
         self.y_speed = 5
